@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Laravel Sgopping
+# Laravel Sgopping
 
 Laravel shopping is built in laravel 8 version and MySQL database for the backend. It has different features for the user like a user can view all the category, select a product and select the quantity and add the product to his cart. The user can add multiple products in cart . There are mutliple payment methods in the checkout page.
 
@@ -19,22 +19,31 @@ git clone https://github.com/Enas-Asmar/laravel-shopping.git
 cd laravel-shopping
 
 
+
+
 ## Install Dependencies
 composer install
+
+
 
 
 ## Run Server
 php artisan serve
 
 
+
+
 ## Click below after setup
 http://localhost:8000
 
 
-## Usage
+
+
+
+# Usage
 The shoppingcart gives you the following methods to use:
 
-# addToCart(Request ...)
+## addToCart(Request ...)
     
 $cart= new Cart;
     
@@ -46,14 +55,14 @@ $cart->save();
 
 
 
-# CartItem()
+## CartItem()
 
 $userId=Session()->get('user')['id'];
 
 return Cart::where('user_id',$userId)->count();
 
 
-# CartList()
+## CartList()
 
 $userId=Session()->get('user')['id'];
 
@@ -71,7 +80,7 @@ return view('cartlist',['products'=>$products]);
 
 
 
-# RemoveCart($id)
+## RemoveCart($id)
     
 Cart::destroy($id);
 
@@ -79,7 +88,9 @@ return redirect('cartlist');
 
 
 
-## Overiew
+
+
+# Overiew
 
 -Login and Register
 
