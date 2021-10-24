@@ -34,7 +34,7 @@ http://localhost:8000
 ## Usage
 The shoppingcart gives you the following methods to use:
 
-# Cart::add()
+# addToCart(Request ...)
     
 $cart= new Cart;
     
@@ -43,5 +43,61 @@ $cart->user_id=$req->session()->get('user')['id'];
 $cart->product_id=$req->product_id;
     
 $cart->save();
+
+
+
+# CartItem()
+
+$userId=Session()->get('user')['id'];
+
+return Cart::where('user_id',$userId)->count();
+
+
+# CartList()
+
+$userId=Session()->get('user')['id'];
+
+$products= DB::table('cart')
+
+->join('products','cart.product_id','=','products.id')
+
+->where('cart.user_id',$userId)
+
+->select('products.*','cart.id as cart_id')
+
+->get();
+
+return view('cartlist',['products'=>$products]);
+
+
+
+# RemoveCart($id)
+    
+Cart::destroy($id);
+
+return redirect('cartlist');
+
+
+
+## Overiew
+
+-Login and Register
+
+-Product quantity increment/decrement before adding to cart
+
+-Add to Cart.
+
+-Add to cart with product quantity increment/decrement from the Cart .
+
+-Checkout information validation before placing order
+
+-Checkout Page.
+
+-Multiple payment option.
+
+-View orders and order status.
+
+
+
 
 
