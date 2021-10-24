@@ -36,10 +36,14 @@ The shoppingcart gives you the following methods to use:
 
 # Cart::add()
 <div class="highlight highlight-text-html-php position-relative overflow-auto">
+<code>
     
 $cart= new Cart;
+    
 $cart->user_id=$req->session()->get('user')['id'];
+    
 $cart->product_id=$req->product_id;
+    
 $cart->save();
-return redirect('/');
+    </code>
 </div>
