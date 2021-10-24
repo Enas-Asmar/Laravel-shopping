@@ -35,7 +35,6 @@ http://localhost:8000
 The shoppingcart gives you the following methods to use:
 
 # Cart::add()
-<div class="highlight highlight-text-html-php position-relative overflow-auto">
 <code>
     
 $cart= new Cart;
@@ -46,4 +45,4 @@ $cart->product_id=$req->product_id;
     
 $cart->save();
     </code>
-</div>
+
